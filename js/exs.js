@@ -41,15 +41,51 @@ function changeLayout(){
 }
 
 
-let spans = document.querySelectorAll('span');
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+// let spans = document.querySelectorAll('span');
+// const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 
-let counter = 0;
-for(let element of spans){
-    element.style.color = colors[counter]
-     counter++
-}
+// let counter = 0;
+// for(let element of spans){
+//     element.style.color = colors[counter]
+//      counter++
+// }
 
 // spans.forEach((element, index) => {
 //      element.style.color = colors[index] 
 // })
+
+function changeHighlight(){
+     let myLis = document.querySelectorAll('li');
+
+     for(let element of myLis){
+          if(element.classList.contains('highlight')){
+               element.classList.remove('highlight')
+          }else{
+               element.classList.add('highlight');
+          }
+          
+   
+     }
+}
+
+          
+function createBtn(){
+     let myDiv = document.getElementById('container');
+               let myBtnToDelete = document.createElement('button');
+               myBtnToDelete.innerText = 'Botão para apagar';
+ myDiv.appendChild(myBtnToDelete)
+
+     for(let i=1; i<101; i++){
+           let myBtn = document.createElement('button');
+          myBtn.innerText = 'Botão'+i;
+          myBtn.classList.add('classListTest')
+
+
+          myDiv.appendChild(myBtn)
+     }
+     
+     myBtnToDelete.remove()
+    
+
+    
+}
