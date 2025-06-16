@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vou às Compras</title>
+    <script src="../js/multiexs.js" defer></script>
   </head>
   <body>
-    <form>
-      <input type="text" placeholder="Introduza o Produto" value="" /><br />
-      <input id="qt"
+    <form id="myShoppingList">
+      <input name="product" type="text" placeholder="Introduza o Produto" value="" /><br />
+      <input name="qt" id="qt"
         type="number"
         placeholder="Introduza a Quantidade"
         value=""
       /><br />
-      <button type="submit">Submeter</button>
+      <button  type="submit">Submeter</button>
     </form>
 
     <ul></ul>
