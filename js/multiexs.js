@@ -19,7 +19,7 @@
 // calcular.addEventListener('click',
 //     function(e){
 //           console.log(e)
-//         let myInput = document.querySelector('#num1').value; 
+//         let myInput = document.querySelector('#num1').value;
 //         console.log(myInput);
 //     }
 // )
@@ -33,13 +33,11 @@
 
 // // })
 
-
 // document.addEventListener('keydown', function(e){
 //    if(e.code == 'ArrowUp'){
 //     alert('cucu')
 //    }
 // })
-
 
 // myBtnChangeColor.addEventListener("click", changeColor);
 // myBtnHello.addEventListener("click", changeColor);
@@ -55,7 +53,6 @@
 //   const myLi = document.createElement('li');
 //   myLi.textContent = animalVal;
 
-
 //   myList.appendChild(myLi)
 
 //   myForm.reset();
@@ -63,24 +60,51 @@
 //   //myForm.submit();
 // })
 
-let myFormG = document.getElementById('myShoppingList');
+// let myFormG = document.getElementById('myShoppingList');
 
-myFormG.addEventListener('submit', function(e){
-  e.preventDefault();
-  const formData = new FormData(this);
+// myFormG.addEventListener('submit', function(e){
+//   e.preventDefault();
+//   const formData = new FormData(this);
 
-  const li = document.createElement('li');
-  const myUl = document.querySelector('ul');
-  li.innerText = formData.get('product') + '-' + formData.get('qt');
-  myUl.appendChild(li)
+//   const li = document.createElement('li');
+//   const myUl = document.querySelector('ul');
+//   li.innerText = formData.get('product') + '-' + formData.get('qt');
+//   myUl.appendChild(li)
 
+//   myFormG.reset()
 
-  myFormG.reset()
+// })
 
+// let myDiv = document.querySelector("div");
+// console.log(myDiv);
 
+// myDiv.addEventListener("click", function (e) {
+//       e.stopPropagation();
+//   if (e.target.tagName === "BUTTON" && e.target.id == "cucu") {
 
+//     alert("clicado botão!");
+//   }
+//   console.log(e.target);
+// });
 
-})
+//função que faz a consulta À Api, traz o resultado em json e tranforma de forma a que o JS consiga interpretar
+const loadTVShow = async() => {
+  const result = await fetch('https://api.tvmaze.com/singlesearch/shows?q=friends');
+  const data = await result.json();
+
+  return data;
+} 
+
+//função que constrói com o resultado da api (quando ele chegar) o html
+const getData = async() => {
+  const result = await loadTVShow();
+  
+  //console log ou criar elementos, etc
+  console.log(result)
+}
+
+getData();
+
 
 
 
